@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import type { FC, HTMLAttributes } from "react";
+import type { HTMLAttributes } from "react";
 import {
   Cloud,
   Code2,
@@ -30,13 +30,13 @@ type MotionSectionShimProps = HTMLAttributes<HTMLElement> & {
 };
 
 const isServer = typeof window === "undefined";
-const MotionDiv: FC<MotionDivShimProps> = isServer
-  ? ({ initial, animate, whileInView, viewport, transition, ...rest }) => (
+const MotionDiv = isServer
+  ? ({ initial, animate, whileInView, viewport, transition, ...rest }: MotionDivShimProps) => (
       <div {...rest} />
     )
   : motion.div;
-const MotionSection: FC<MotionSectionShimProps> = isServer
-  ? ({ initial, animate, whileInView, viewport, transition, ...rest }) => (
+const MotionSection = isServer
+  ? ({ initial, animate, whileInView, viewport, transition, ...rest }: MotionSectionShimProps) => (
       <section {...rest} />
     )
   : motion.section;

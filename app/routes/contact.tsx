@@ -152,8 +152,11 @@ export default function Contact() {
       });
 
       if (!response.ok) {
-        const { error } = await response.json().catch(() => ({ error: "" }));
-        throw new Error(error || "Unable to send message right now.");
+        const data = await response.json().catch(() => ({}));
+        const errorMsg = data.error || "Unable to send message right now.";
+        const details = data.details ? ` (${data.details})` : "";
+        const message = data.message ? ` ${data.message}` : "";
+        throw new Error(`${errorMsg}${details}${message}`);
       }
 
       showToast(

@@ -26,9 +26,29 @@ export default async function handler(req: Request): Promise<Response> {
     });
   }
 
+  // Debug environment variables (only log in development/preview, not expose in production)
+  const isDev = process.env.VERCEL_ENV !== "production";
+  if (isDev) {
+    console.log("Env check:", {
+      hasApiKey: !!process.env.RESEND_API_KEY,
+      hasContactTo: !!CONTACT_TO,
+      hasContactFrom: !!CONTACT_FROM,
+      contactTo: CONTACT_TO,
+      contactFrom: CONTACT_FROM,
+    });
+  }
+
   if (!CONTACT_TO || !CONTACT_FROM || !process.env.RESEND_API_KEY) {
+    const missing = [];
+    if (!process.env.RESEND_API_KEY) missing.push("RESEND_API_KEY");
+    if (!CONTACT_TO) missing.push("CONTACT_TO");
+    if (!CONTACT_FROM) missing.push("CONTACT_FROM");
+    
     return new Response(
-      JSON.stringify({ error: "Email service not configured." }),
+      JSON.stringify({ 
+        error: "Email service not configured.",
+        details: isDev ? `Missing: ${missing.join(", ")}` : undefined,
+      }),
       {
         status: 500,
         headers: { "Content-Type": "application/json" },
@@ -122,10 +142,15 @@ export default async function handler(req: Request): Promise<Response> {
       headers: { "Content-Type": "application/json" },
     });
   } catch (error) {
-    console.error(error);
+    console.error("Resend API error:", error);
+    const errorMessage = error instanceof Error ? error.message : "Unknown error";
+    const errorDetails = isDev ? String(error) : undefined;
+    
     return new Response(
       JSON.stringify({
         error: "Failed to send email. Please try again later.",
+        details: errorDetails,
+        message: isDev ? errorMessage : undefined,
       }),
       {
         status: 500,

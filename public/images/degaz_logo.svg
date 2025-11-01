@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Degaz logo">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="60%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#c084fc"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="rgba(0,0,0,0.25)"/>
+    </filter>
+  </defs>
+
+  <!-- Background circle -->
+  <circle cx="256" cy="256" r="232" fill="#0a0a0a"/>
+
+  <!-- Accent glow -->
+  <ellipse cx="180" cy="150" rx="140" ry="90" fill="#8b5cf6" opacity="0.15"/>
+  <ellipse cx="360" cy="360" rx="120" ry="80" fill="#a855f7" opacity="0.12"/>
+
+  <!-- Monogram D -->
+  <g filter="url(#shadow)">
+    <path fill="url(#g)" d="M150 120h120c98 0 152 58 152 136s-54 136-152 136H150V120zm84 64v144h32c62 0 96-32 96-72s-34-72-96-72h-32z"/>
+  </g>
+
+  <!-- Subtle ring -->
+  <circle cx="256" cy="256" r="230" fill="none" stroke="url(#g)" stroke-opacity="0.25" stroke-width="4"/>
+</svg>
+

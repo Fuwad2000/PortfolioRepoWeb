@@ -144,8 +144,13 @@ export const PROJECTS: Project[] = [
       "Templated email sender with queue/retry logic and provider failover.",
       "Secured secrets and environment configs for multiple environments.",
     ],
-    tags: ["Java", "Spring", "SMTP", "Docker"],
-    links: [{ label: "Repo", href: "#" }],
+    tags: ["Java", "Spring", "SMTP", "Email Service"],
+    links: [
+      {
+        label: "Repo",
+        href: "https://github.com/Fuwad2000/SpringEmailService.git",
+      },
+    ],
   },
   {
     title: "JavaScript Mini-Games",
@@ -197,7 +202,7 @@ export const PROJECTS: Project[] = [
     links: [
       {
         label: "Repo",
-        href: "https://github.com/Fuwad2000/Soccer-Event-App.git",
+        href: "https://github.com/Fuwad2000/SportEvent.git",
       },
     ],
   },

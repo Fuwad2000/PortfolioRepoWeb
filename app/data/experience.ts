@@ -191,7 +191,7 @@ export const PROJECTS: Project[] = [
     links: [
       {
         label: "Repo",
-        href: "https://github.com/Fuwad2000/Eagles-Shoe-Website.git",
+        href: "https://github.com/Kosta155/EagleShoesWebsite.git",
       },
     ],
   },

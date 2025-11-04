@@ -21,6 +21,20 @@ export default async function handler(req: any, res: any) {
   }
 
   const CONTACT_TO = process.env.CONTACT_TO || process.env.RESEND_CONTACT_TO;
+  console.log(CONTACT_TO);
+  console.log(process.env.CONTACT_TO);
+  console.log(process.env.RESEND_CONTACT_TO);
+  console.log(process.env.RESEND_API_KEY);
+  console.log(process.env.VERCEL_ENV);
+  console.log(process.env.CONTACT_FROM);
+  console.log(process.env.RESEND_API_KEY);
+  console.log(process.env.VERCEL_ENV);
+  console.log(process.env.CONTACT_FROM);
+  console.log(process.env.RESEND_API_KEY);
+  console.log(process.env.VERCEL_ENV);
+  console.log(process.env.CONTACT_FROM);
+  console.log(process.env.RESEND_API_KEY);
+  console.log(process.env.VERCEL_ENV);
   const CONTACT_FROM =
     process.env.CONTACT_FROM || "Fuwad Portfolio <onboarding@resend.dev>";
   const API_KEY = process.env.RESEND_API_KEY;
@@ -49,7 +63,7 @@ export default async function handler(req: any, res: any) {
     name = "",
     email = "",
     subject = "Portfolio Inquiry",
-    projectType = "General",
+
     budget = "",
     message = "",
     company = "",
@@ -75,9 +89,6 @@ export default async function handler(req: any, res: any) {
     `Name: ${name}`,
     `Email: ${email}`,
     `Subject: ${subject}`,
-    `Project Type: ${projectType}`,
-    budget ? `Budget: ${budget}` : null,
-    "",
     message,
   ]
     .filter(Boolean)
@@ -111,15 +122,11 @@ export default async function handler(req: any, res: any) {
   }
 
   try {
-    await sendEmail(
-      CONTACT_TO,
-      `New inquiry: ${subject} (${projectType})`,
-      text
-    );
+    await sendEmail(CONTACT_TO, `New inquiry: ${subject}`, text);
     await sendEmail(
       email,
       "Thanks for reaching out!",
-      `Hi ${name.split(" ")[0] || "there"},\n\nThanks for contacting me about ${projectType}. I received your message and will get back to you within 24–48 hours.\n\nBest,\nFuwad Oladega`
+      `Hi ${name.split(" ")[0] || "there"},\n\nThanks for contacting me about . I received your message and will get back to you within 24–48 hours.\n\nBest,\nFuwad Oladega`
     );
     return res.status(200).json({ success: true });
   } catch (err: any) {

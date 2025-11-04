@@ -131,7 +131,7 @@ export const PROJECTS: Project[] = [
     ],
     tags: ["React Native", "Expo", "Node/Express"],
     links: [
-      { label: "link", href: "https://yassen-musallah.vercel.app/" },
+      { label: "Live Site", href: "https://yassen-musallah.vercel.app/" },
       {
         label: "Repo",
         href: "https://github.com/Fuwad2000/YassenMusallah.git",
@@ -155,7 +155,7 @@ export const PROJECTS: Project[] = [
     ],
     tags: ["JavaScript", "HTML5", "CSS"],
     links: [
-      { label: "live", href: "#" },
+      { label: "Live Site", href: "#" },
       { label: "Repo", href: "#" },
     ],
   },

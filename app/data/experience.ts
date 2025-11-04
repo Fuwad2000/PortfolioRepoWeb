@@ -18,7 +18,7 @@ export type Project = {
 
 export const EXPERIENCES: Experience[] = [
   {
-    title: "Infrastructure Analyst Intern",
+    title: "Infrastructure Analyst Intern  (3 co-op terms)",
     org: "Region of Peel",
     start: "2024-01",
     end: "2025-08",
@@ -154,7 +154,10 @@ export const PROJECTS: Project[] = [
       "Accessible controls, sound toggles, and score persistence.",
     ],
     tags: ["JavaScript", "HTML5", "CSS"],
-    links: [{ label: "Demo", href: "#" }],
+    links: [
+      { label: "live", href: "#" },
+      { label: "Repo", href: "#" },
+    ],
   },
 
   {
@@ -167,6 +170,34 @@ export const PROJECTS: Project[] = [
       {
         label: "Repo",
         href: "https://github.com/Fuwad2000/Timhortons-Project.git",
+      },
+    ],
+  },
+  {
+    title: "Eagles Shoe Website",
+    bullets: [
+      "E-commerce platform for an online shoe store with product catalog and shopping functionality.",
+      "Built with responsive HTML/CSS frontend and Java Spring Boot backend for order management and user interactions.",
+    ],
+    tags: ["HTML", "CSS", "Java", "Spring Boot"],
+    links: [
+      {
+        label: "Repo",
+        href: "https://github.com/Fuwad2000/Eagles-Shoe-Website.git",
+      },
+    ],
+  },
+  {
+    title: "Soccer Event App",
+    bullets: [
+      "Event management application for organizing and managing soccer tournaments and matches.",
+      "Built with HTML5/CSS frontend, Thymeleaf templating engine, and Java Spring Boot backend for event scheduling, team registration, and match tracking.",
+    ],
+    tags: ["HTML5", "CSS", "Thymeleaf", "Java", "Spring Boot"],
+    links: [
+      {
+        label: "Repo",
+        href: "https://github.com/Fuwad2000/Soccer-Event-App.git",
       },
     ],
   },

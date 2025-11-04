@@ -43,9 +43,9 @@ export default async function handler(req: Request): Promise<Response> {
     if (!process.env.RESEND_API_KEY) missing.push("RESEND_API_KEY");
     if (!CONTACT_TO) missing.push("CONTACT_TO");
     if (!CONTACT_FROM) missing.push("CONTACT_FROM");
-    
+
     return new Response(
-      JSON.stringify({ 
+      JSON.stringify({
         error: "Email service not configured.",
         details: isDev ? `Missing: ${missing.join(", ")}` : undefined,
       }),
@@ -125,7 +125,7 @@ export default async function handler(req: Request): Promise<Response> {
     await resend.emails.send({
       from: CONTACT_FROM,
       to: CONTACT_TO,
-      reply_to: email,
+      replyTo: email,
       subject: `New inquiry: ${subject} (${projectType})`,
       text: details,
     });
@@ -143,9 +143,10 @@ export default async function handler(req: Request): Promise<Response> {
     });
   } catch (error) {
     console.error("Resend API error:", error);
-    const errorMessage = error instanceof Error ? error.message : "Unknown error";
+    const errorMessage =
+      error instanceof Error ? error.message : "Unknown error";
     const errorDetails = isDev ? String(error) : undefined;
-    
+
     return new Response(
       JSON.stringify({
         error: "Failed to send email. Please try again later.",

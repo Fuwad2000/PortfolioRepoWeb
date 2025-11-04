@@ -94,6 +94,76 @@ export default function Experience() {
           </div>
           <SkillsGrid categories={SKILLS} />
         </section>
+
+        <section className="space-y-6">
+          <div className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
+            <div>
+              <h2
+                className="text-2xl md:text-3xl font-semibold tracking-tight"
+                style={{ color: "var(--textPrimary)" }}
+              >
+                References
+              </h2>
+              <p className="text-sm" style={{ color: "var(--textSecondary)" }}>
+                Professional references available upon request.
+              </p>
+            </div>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2">
+            <div className="rounded-2xl border border-(--border) bg-(--surface) px-5 py-6 shadow-[0_18px_50px_-35px_rgba(16,185,129,0.4)]">
+              <h3
+                className="text-lg font-semibold"
+                style={{ color: "var(--textPrimary)" }}
+              >
+                Andrew Griffith
+              </h3>
+              <p
+                className="mt-1 text-sm"
+                style={{ color: "var(--textSecondary)" }}
+              >
+                Supervisor, Infrastructure Services
+              </p>
+              <p
+                className="mt-1 text-sm"
+                style={{ color: "var(--textSecondary)" }}
+              >
+                Region of Peel
+              </p>
+              <a
+                href="mailto:andrew.griffith@peelregion.ca"
+                className="mt-3 inline-block text-sm font-medium text-(--accent) hover:underline"
+              >
+                andrew.griffith@peelregion.ca
+              </a>
+            </div>
+            <div className="rounded-2xl border border-(--border) bg-(--surface) px-5 py-6 shadow-[0_18px_50px_-35px_rgba(16,185,129,0.4)]">
+              <h3
+                className="text-lg font-semibold"
+                style={{ color: "var(--textPrimary)" }}
+              >
+                Madeleine Crew
+              </h3>
+              <p
+                className="mt-1 text-sm"
+                style={{ color: "var(--textSecondary)" }}
+              >
+                Tutor Training & Engagement Coordinator
+              </p>
+              <p
+                className="mt-1 text-sm"
+                style={{ color: "var(--textSecondary)" }}
+              >
+                Sheridan College
+              </p>
+              <a
+                href="mailto:madeleine.crew@sheridancollege.ca"
+                className="mt-3 inline-block text-sm font-medium text-(--accent) hover:underline"
+              >
+                madeleine.crew@sheridancollege.ca
+              </a>
+            </div>
+          </div>
+        </section>
       </div>
     </main>
   );

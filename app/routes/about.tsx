@@ -31,14 +31,24 @@ type MotionSectionShimProps = HTMLAttributes<HTMLElement> & {
 
 const isServer = typeof window === "undefined";
 const MotionDiv = isServer
-  ? ({ initial, animate, whileInView, viewport, transition, ...rest }: MotionDivShimProps) => (
-      <div {...rest} />
-    )
+  ? ({
+      initial,
+      animate,
+      whileInView,
+      viewport,
+      transition,
+      ...rest
+    }: MotionDivShimProps) => <div {...rest} />
   : motion.div;
 const MotionSection = isServer
-  ? ({ initial, animate, whileInView, viewport, transition, ...rest }: MotionSectionShimProps) => (
-      <section {...rest} />
-    )
+  ? ({
+      initial,
+      animate,
+      whileInView,
+      viewport,
+      transition,
+      ...rest
+    }: MotionSectionShimProps) => <section {...rest} />
   : motion.section;
 
 const fadeIn = {
@@ -128,10 +138,16 @@ const interests = [
 ];
 
 const heroBadges = [
-  "Infrastructure Analyst",
-  "Cloud Develpment/Engineering",
+  "Cloud Infrastructure Analyst",
+  "Web Developer",
+  "Cloud Developer",
+  "Cloud Engineer",
+  "IT Infrastructure Analyst",
   "Full-Stack Development",
   "Software Development",
+  "Networking",
+  "DevOps",
+  "IT Support Specialist",
 ];
 
 const heroCardStyle = {

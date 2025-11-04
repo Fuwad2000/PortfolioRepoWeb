@@ -114,11 +114,11 @@ export default function Projects() {
               </p>
             </div>
           </div>
-          <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2">
+          <div className="grid gap-4 sm:gap-6 sm:grid-cols-1 md:grid-cols-2">
             {codeBlocks.map((block) => (
               <div
                 key={block.filename}
-                className="rounded-2xl border border-(--border) bg-(--surface) shadow-[0_18px_50px_-35px_rgba(16,185,129,0.45)] backdrop-blur-xl"
+                className="rounded-2xl border border-(--border) bg-(--surface) shadow-[0_18px_50px_-35px_rgba(16,185,129,0.45)] backdrop-blur-xl overflow-hidden"
               >
                 <CodeBlock
                   code={block.code}

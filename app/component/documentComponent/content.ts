@@ -15,7 +15,16 @@ export const documents: DocumentItem[] = [
       "Latest professional resume highlighting experience and skills.",
     href: "/docs/resume.pdf",
     tag: "Resume",
-    updated: "Oct 31, 2025",
+    updated: "Nov 03, 2025",
+  },
+  {
+    id: "coverletter.pdf",
+    title: "Cover Letter",
+    description:
+      "A generic cover letter for a job application in the field of Cloud Computing|DevOps|Software Engineering|IT Support",
+    href: "/docs/coverletter.pdf",
+    tag: "Cover Letter",
+    updated: "Nov 03, 2025",
   },
   {
     id: "transcript",

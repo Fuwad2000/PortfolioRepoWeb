@@ -160,8 +160,11 @@ export const PROJECTS: Project[] = [
     ],
     tags: ["JavaScript", "HTML5", "CSS"],
     links: [
-      { label: "Live Site", href: "#" },
-      { label: "Repo", href: "#" },
+      { label: "Live Site", href: "https://rps-and-guess-game.vercel.app/" },
+      {
+        label: "Repo",
+        href: "https://github.com/Fuwad2000/RPS-and-Guess-Game.git",
+      },
     ],
   },
 

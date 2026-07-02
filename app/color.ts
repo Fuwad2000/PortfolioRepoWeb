@@ -412,6 +412,13 @@ export default colors;
 // THEME APPLICATION HELPERS (CSS Variables)
 export type ThemeMode = "light" | "dark";
 
+export function getInitialTheme(): ThemeMode {
+  if (typeof window === "undefined") return "dark";
+  const stored = localStorage.getItem("theme");
+  if (stored === "light" || stored === "dark") return stored;
+  return "dark";
+}
+
 // Applies both the existing cssVariables tokens and a small set of common tokens
 export function applyTheme(mode: ThemeMode) {
   const root = document.documentElement;

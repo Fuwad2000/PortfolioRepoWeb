@@ -49,7 +49,7 @@ export const aboutContent = {
     title: "Cloud & Software Developer",
     achievement: "Sheridan Software Capstone Winner 2025",
     image: {
-      src: "/images/work.jpg",
+      src: "/images/image.png",
       alt: "Fuwad Oladega",
     },
     bio: [

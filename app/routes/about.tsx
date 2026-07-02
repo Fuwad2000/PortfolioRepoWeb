@@ -142,7 +142,7 @@ function AboutHeroSection({
             <img
               src={hero.image.src}
               alt={hero.image.alt}
-              className="relative block aspect-4/5 w-full object-cover"
+              className="relative block aspect-4/5 w-full object-cover object-top"
             />
           </div>
         </div>

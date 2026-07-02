@@ -11,6 +11,16 @@ import { ThemeProvider } from "~/component/ThemeProvider";
 import type { Route } from "./+types/root";
 import "./app.css";
 
+export function meta({}: Route.MetaArgs) {
+  return [
+    { title: "Degaz" },
+    {
+      name: "description",
+      content: "Fuwad Oladega — Cloud & Software Developer portfolio.",
+    },
+  ];
+}
+
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
   {

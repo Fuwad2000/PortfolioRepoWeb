@@ -3,8 +3,11 @@ import Hero from "~/component/Hero";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
+    { title: "Degaz" },
+    {
+      name: "description",
+      content: "Cloud & Software Developer portfolio by Fuwad Oladega.",
+    },
   ];
 }
 

@@ -252,7 +252,7 @@ export default function Hero({
                 <ArrowRight className="ml-2 h-4 w-4" aria-hidden />
               </a>
               <a
-                href="#contact"
+                href="/contact"
                 className="inline-flex items-center justify-center px-6 py-3 text-sm sm:text-base rounded-2xl border border-accent hover:-translate-y-0.5 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-(--accent) focus-visible:ring-offset-2 focus-visible:ring-offset-transparent transition-all duration-200"
                 style={{ color: "var(--textPrimary)" }}
               >

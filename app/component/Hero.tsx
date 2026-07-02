@@ -1,5 +1,12 @@
-import { useEffect, useRef, useState } from "react";
-import { Github, Linkedin, Mail, ArrowRight, ChevronDown } from "lucide-react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
+import {
+  Github,
+  Linkedin,
+  Mail,
+  ArrowRight,
+  ChevronDown,
+  Trophy,
+} from "lucide-react";
 
 type LinkConfig = {
   github: string;
@@ -10,10 +17,39 @@ type LinkConfig = {
 type HeroProps = {
   name?: string;
   title?: string;
-  subtitle?: string;
+  achievement?: string;
+  subtitle?: ReactNode;
   skills?: string[];
   links?: LinkConfig;
 };
+
+function HeroHighlight({ children }: { children: ReactNode }) {
+  return (
+    <span
+      className="font-semibold text-(--accent) rounded-sm px-1 py-0.5 box-decoration-clone"
+      style={{
+        background: "color-mix(in srgb, var(--accent) 16%, transparent)",
+        boxDecorationBreak: "clone",
+        WebkitBoxDecorationBreak: "clone",
+      }}
+    >
+      {children}
+    </span>
+  );
+}
+
+const defaultSubtitle = (
+  <>
+    I build scalable cloud applications, modern web platforms, and enterprise
+    infrastructure. As a{" "}
+    <HeroHighlight>Microsoft Infrastructure Specialist</HeroHighlight>, Co-founder
+    of <HeroHighlight>Eagles Development Team</HeroHighlight>, former
+    Infrastructure Analyst at the Region of Peel, and Sheridan tutor, I combine
+    software engineering, cloud technologies, and automation to deliver{" "}
+    <HeroHighlight>secure, high-performance solutions</HeroHighlight> from
+    concept to deployment.
+  </>
+);
 
 const defaultSkills = [
   "AWS Lambda",
@@ -107,7 +143,8 @@ function SkillsMarquee({ items }: { items: string[] }) {
 export default function Hero({
   name = "Fuwad Oladega",
   title = "Cloud & Software Developer",
-  subtitle = "I build cloud-ready apps and infrastructure. Co-op Infrastructure Analyst at Region of Peel, Tutor at Sheridan. I design clean UIs, automate backends, and deploy on AWS with confidence.",
+  achievement = "Sheridan Software Capstone Winner 2025",
+  subtitle = defaultSubtitle,
   skills = defaultSkills,
   links = defaultLinks,
 }: HeroProps) {
@@ -176,23 +213,29 @@ export default function Hero({
               Hi, I'm
             </p>
             <h1
-              className="mt-4 font-extrabold leading-tight"
+              className="mt-4 font-extrabold leading-tight text-transparent bg-clip-text"
               style={{
                 fontSize: "clamp(3.25rem, 8vw, 5.5rem)",
                 lineHeight: 1.03,
                 letterSpacing: "-0.035em",
-                color: "var(--textPrimary)",
+                backgroundImage:
+                  "linear-gradient(120deg, var(--textPrimary) 0%, var(--textPrimary) 55%, var(--accent) 100%)",
               }}
             >
               {name}
             </h1>
             <div className="mt-4 h-1.5 w-32 rounded-full bg-linear-to-r from-(--accent) via-emerald-300/60 to-transparent" />
             <h2
-              className="mt-6 font-semibold text-2xl sm:text-4xl lg:text-5xl tracking-tight"
-              style={{ color: "var(--accent)" }}
+              className="mt-6 font-semibold text-2xl sm:text-4xl lg:text-5xl tracking-tight text-(--accent)"
             >
               {title}
             </h2>
+            {achievement ? (
+              <span className="mt-5 inline-flex items-center gap-2 rounded-full border border-accent/50 bg-[color-mix(in_srgb,var(--accent)_12%,var(--surface))] px-4 py-2 text-xs sm:text-sm font-semibold tracking-wide text-(--accent) shadow-[0_0_24px_-12px_var(--accent)]">
+                <Trophy className="h-4 w-4 shrink-0" aria-hidden />
+                {achievement}
+              </span>
+            ) : null}
             <p
               className="mt-8 max-w-3xl text-lg sm:text-xl lg:text-2xl leading-[1.75]"
               style={{ color: "var(--textSecondary)" }}

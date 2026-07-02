@@ -18,13 +18,13 @@ export const documents: DocumentItem[] = [
     updated: "Nov 03, 2025",
   },
   {
-    id: "coverletter.pdf",
-    title: "Cover Letter",
+    id: "capstone",
+    title: "Sheridan Software Capstone Project",
     description:
-      "A generic cover letter for a job application in the field of Cloud Computing|DevOps|Software Engineering|IT Support",
-    href: "/docs/coverletter.pdf",
-    tag: "Cover Letter",
-    updated: "Nov 03, 2025",
+      "Capstone project documentation — Sheridan Software Capstone Winner 2025.",
+    href: "/docs/capstone.pdf",
+    tag: "Capstone",
+    updated: "Jul 2025",
   },
   {
     id: "transcript",

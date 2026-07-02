@@ -6,6 +6,7 @@ import {
 } from "@react-router/dev/routes";
 
 export default [
+  route("api/send-email", "routes/api.send-email.ts"),
   layout("routes/portfolio-layout.tsx", [
     index("routes/home.tsx"),
     route("/about", "routes/about.tsx"),

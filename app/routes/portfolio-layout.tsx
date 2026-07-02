@@ -46,9 +46,9 @@ export default function PortfolioLayout() {
                 >
                   🐦
                 </span>
-                Degaz Development Team
+                Eagles Development Team
               </span>
-              <span>© 2025 Degaz. All rights reserved.</span>
+              <span>© 2025 Eagles Development Team. All rights reserved.</span>
             </div>
           </div>
         </footer>

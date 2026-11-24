@@ -13,7 +13,7 @@ import "./app.css";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Degaz" },
+    { title: "DegazTech Solutions" },
     {
       name: "description",
       content: "Fuwad Oladega — Cloud & Software Developer portfolio.",
@@ -32,6 +32,7 @@ export const links: Route.LinksFunction = () => [
     rel: "stylesheet",
     href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
   },
+  { rel: "icon", type: "image/png", href: "/images/D_Logo.png" },
 ];
 
 const themeInitScript = `(function(){try{var s=localStorage.getItem("theme");document.documentElement.setAttribute("data-theme",s==="light"?"light":"dark");}catch(e){document.documentElement.setAttribute("data-theme","dark");}})();`;

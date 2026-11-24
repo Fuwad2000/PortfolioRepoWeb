@@ -35,7 +35,7 @@ export const experienceContent = {
     eyebrow: "Journey",
     title: "Experience",
     subtitle:
-      "Over 3 years of hands-on infrastructure and full-stack work, plus 150+ students mentored.",
+      "Over 4 years of hands-on infrastructure and full-stack work, plus 150+ students mentored.",
     actions: [
       { label: "View Resume", href: "/documents" },
       { label: "Get in Touch", href: "/contact" },
@@ -48,7 +48,7 @@ export const experienceContent = {
   projectsSection: {
     heading: "Selected Full-Stack Projects",
     description:
-      "A mix of client work, community apps, and Eagles Development Team builds—covering UI, APIs, and production ops.",
+      "A mix of client work, community apps, and DegazTech Solutions builds—covering UI, APIs, and production ops.",
   },
   skillsSection: {
     heading: "Core Skills",
@@ -125,11 +125,11 @@ export const experienceContent = {
     },
     {
       title: "Full-Stack Projects",
-      org: "Eagles Development Team",
+      org: "DegazTech Solutions",
       start: "2022-09",
       end: "Present",
       bullets: [
-        "Co-founded Eagles Development Team and built production-ready websites and cloud solutions for businesses.",
+        "Founded DegazTech Solutions and built production-ready websites and cloud solutions for businesses.",
         "Owned UI/UX, API design, database modeling, CI/CD, and AWS deployments.",
       ],
       tags: [
@@ -144,7 +144,26 @@ export const experienceContent = {
     },
   ] satisfies Experience[],
   projects: [
-
+    {
+      title: "Canadian Islamic Union (Website + Staff Portal)",
+      bullets: [
+        "Production-ready nonprofit website with event management, membership registration, volunteer applications, and newsletter subscriptions.",
+        "Built a secure staff portal with Microsoft Entra ID authentication, role-based access control, Azure SQL database, automated email notifications, and cloud storage integration.",
+        "Deployed a scalable cloud architecture using Azure Functions and Cloudflare Workers, with separate development and production environments.",
+      ],
+      tags: [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Azure SQL",
+        "Azure Functions",
+        "Microsoft Entra ID",
+        "Azure Blob Storage",
+        "Azure Communication Services",
+        "Cloudflare Workers",
+      ],
+      links: [{ label: "Live Site", href: "https://www.ciucanada.ca/" }],
+    },
     {
       title: "Imars Barbershop Booking Website",
       bullets: [

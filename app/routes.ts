@@ -12,6 +12,7 @@ export default [
     route("/about", "routes/about.tsx"),
     route("/experience", "routes/experience.tsx"),
     route("/projects", "routes/projects.tsx"),
+    route("/pricing", "routes/pricing.tsx"),
     route("/documents", "routes/documents.tsx"),
     route("/contact", "routes/contact.tsx"),
   ]),

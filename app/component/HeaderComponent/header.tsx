@@ -38,6 +38,7 @@ const Header = () => {
     { title: "About", path: "/about" },
     { title: "Experience", path: "/experience" },
     { title: "Projects", path: "/projects" },
+    { title: "Pricing", path: "/pricing" },
     { title: "Documents", path: "/documents" },
     { title: "Contact", path: "/contact" },
   ];
@@ -113,18 +114,16 @@ const Header = () => {
           <div className="hidden md:flex items-center justify-between h-16">
             <NavLink
               to="/"
+              aria-label="Degaz"
               className="flex items-center cursor-pointer select-none"
             >
-              <span
-                className="text-lg font-semibold text-transparent bg-clip-text"
-                style={{
-                  backgroundImage:
-                    "linear-gradient(to right, var(--accent), var(--accentHover), var(--accentSubtle), var(--accentHover))",
-                  filter: "drop-shadow(0 0 16px var(--accent))",
-                }}
-              >
-                Degaz
-              </span>
+              <img
+                src="/images/D_Logo.png"
+                alt=""
+                width={40}
+                height={40}
+                className="h-10 w-10 shrink-0 object-contain"
+              />
             </NavLink>
             <nav aria-label="Main" className="flex items-center gap-6">
               {navItems.map((item) => {
@@ -211,18 +210,16 @@ const Header = () => {
           <div className="flex md:hidden items-center justify-between h-16">
             <NavLink
               to="/"
+              aria-label="Degaz"
               className="flex items-center cursor-pointer select-none"
             >
-              <span
-                className="ml-2 text-xl font-bold text-transparent bg-clip-text"
-                style={{
-                  backgroundImage:
-                    "linear-gradient(to right, var(--accent), var(--accentHover), var(--accentSubtle), var(--accentHover))",
-                  filter: "drop-shadow(0 0 16px var(--accent))",
-                }}
-              >
-                Degaz
-              </span>
+              <img
+                src="/images/D_Logo.png"
+                alt=""
+                width={36}
+                height={36}
+                className="h-9 w-9 shrink-0 object-contain"
+              />
             </NavLink>
 
             <div className="flex items-center gap-2">

@@ -3,6 +3,7 @@ import {
   Github,
   Linkedin,
   Mail,
+  Phone,
   ArrowRight,
   ChevronDown,
   Trophy,
@@ -12,6 +13,7 @@ type LinkConfig = {
   github: string;
   linkedin: string;
   email: string;
+  phone: string;
 };
 
 type HeroProps = {
@@ -40,14 +42,28 @@ function HeroHighlight({ children }: { children: ReactNode }) {
 
 const defaultSubtitle = (
   <>
-    I build scalable cloud applications, modern web platforms, and enterprise
-    infrastructure. As a{" "}
-    <HeroHighlight>Microsoft Infrastructure Specialist</HeroHighlight>, Co-founder
-    of <HeroHighlight>Eagles Development Team</HeroHighlight>, former
-    Infrastructure Analyst at the Region of Peel, and Sheridan tutor, I combine
-    software engineering, cloud technologies, and automation to deliver{" "}
-    <HeroHighlight>secure, high-performance solutions</HeroHighlight> from
-    concept to deployment.
+    <span className="block">
+      I build scalable cloud applications, modern web platforms, and enterprise
+      infrastructure. As a{" "}
+      <HeroHighlight>
+        Microsoft Data Center Hyperscale Infrastructure Specialist,
+      </HeroHighlight>{" "}
+      Founder of <HeroHighlight>DegazTech Solutions,</HeroHighlight> Cloud
+      & Software Developer at{" "}
+      <HeroHighlight>Canadian Islamic Union (CIU Canada),</HeroHighlight> former
+      Infrastructure Analyst at the Region of Peel, and Sheridan tutor, I
+      combine software engineering, cloud infrastructure, networking, and
+      automation to deliver{" "}
+      <HeroHighlight>
+        secure, scalable, and high-performance solutions
+      </HeroHighlight>{" "}
+      from concept to deployment.
+    </span>
+    <span className="mt-5 block">
+      Through <HeroHighlight>DegazTech Solutions,</HeroHighlight> I help
+      businesses establish their digital presence, streamline operations, and
+      leverage modern technologies to drive growth.
+    </span>
   </>
 );
 
@@ -104,6 +120,7 @@ const defaultLinks: LinkConfig = {
   github: "https://github.com/Fuwad2000",
   linkedin: "https://www.linkedin.com/in/fuwad-oladega/",
   email: "mailto:oladegafuwad7@gmail.com",
+  phone: "tel:+14168889215",
 };
 
 function SkillsMarquee({ items }: { items: string[] }) {
@@ -142,7 +159,7 @@ function SkillsMarquee({ items }: { items: string[] }) {
 
 export default function Hero({
   name = "Fuwad Oladega",
-  title = "Cloud & Software Developer",
+  title = "Cloud & Software Developer | Founder of DegazTech Solutions",
   achievement = "Sheridan Software Capstone Winner 2025",
   subtitle = defaultSubtitle,
   skills = defaultSkills,
@@ -226,7 +243,7 @@ export default function Hero({
             </h1>
             <div className="mt-4 h-1.5 w-32 rounded-full bg-linear-to-r from-(--accent) via-emerald-300/60 to-transparent" />
             <h2
-              className="mt-6 font-semibold text-2xl sm:text-4xl lg:text-5xl tracking-tight text-(--accent)"
+              className="mt-6 max-w-3xl font-semibold text-xl sm:text-3xl lg:text-4xl tracking-tight text-(--accent)"
             >
               {title}
             </h2>
@@ -310,6 +327,19 @@ export default function Hero({
                 title="Email"
               >
                 <Mail className="h-[24px] w-[24px]" aria-hidden />
+              </a>
+              <a
+                href={links.phone}
+                aria-label="Call (416) 888-9215"
+                className="inline-flex h-12 w-12 items-center justify-center rounded-full hover:scale-105 hover:ring-2 hover:ring-(--accent) focus:outline-none focus-visible:ring-2 focus-visible:ring-(--accent) transition-all duration-200"
+                style={{
+                  background: "var(--chipBg)",
+                  border: "1px solid var(--chipBorder)",
+                  color: "var(--textPrimary)",
+                }}
+                title="(416) 888-9215"
+              >
+                <Phone className="h-[24px] w-[24px]" aria-hidden />
               </a>
             </div>
           </div>

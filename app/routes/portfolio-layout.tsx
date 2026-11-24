@@ -40,15 +40,9 @@ export default function PortfolioLayout() {
                 className="inline-flex items-center gap-2 text-base"
                 style={{ color: "var(--textPrimary)" }}
               >
-                <span
-                  className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[radial-gradient(circle_at_center,rgba(16,185,129,0.9)0%,rgba(16,185,129,0.25)60%,transparent_85%)] shadow-[0_0_24px_-8px_var(--accent)]"
-                  aria-hidden
-                >
-                  🐦
-                </span>
-                Eagles Development Team
+                DegazTech Solutions
               </span>
-              <span>© 2025 Eagles Development Team. All rights reserved.</span>
+              <span>© 2025 DegazTech Solutions. All rights reserved.</span>
             </div>
           </div>
         </footer>

@@ -3,7 +3,7 @@ import Hero from "~/component/Hero";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Degaz" },
+    { title: "DegazTech Solutions" },
     {
       name: "description",
       content: "Cloud & Software Developer portfolio by Fuwad Oladega.",

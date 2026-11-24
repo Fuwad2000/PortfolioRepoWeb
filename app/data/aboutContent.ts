@@ -95,7 +95,7 @@ export const aboutContent = {
         segments: [
           { text: "Beyond my professional work, I am the " },
           {
-            text: "Co-founder of Eagles Development Team",
+            text: "Founder of DegazTech Solutions",
             highlight: true,
           },
           {
@@ -181,7 +181,7 @@ export const aboutContent = {
       {
         year: "September 2022 — Present",
         title: "Full-Stack Projects",
-        org: "Eagles Development Team",
+        org: "DegazTech Solutions",
         body: "End-to-end web apps on AWS with CI/CD and container orchestration.",
       },
     ] satisfies AboutTimelineItem[],

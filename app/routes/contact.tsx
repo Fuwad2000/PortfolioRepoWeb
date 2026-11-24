@@ -1,8 +1,12 @@
 import { useMemo, useState } from "react";
-import { Mail, Linkedin, Github, FileDown, Clock, Send } from "lucide-react";
+import { useSearchParams } from "react-router";
+import { Mail, Phone, Linkedin, Github, FileDown, Clock, Send } from "lucide-react";
 import Toast, { type ToastVariant } from "~/component/Toast";
+import { isKnownPricingSelection } from "~/data/pricing";
 
 const EMAIL = "oladegafuwad7@gmail.com";
+const PHONE_DISPLAY = "(416) 888-9215";
+const PHONE_TEL = "+14168889215";
 const LINKEDIN = "https://www.linkedin.com/in/fuwad-oladega/";
 const GITHUB = "https://github.com/Fuwad2000";
 
@@ -68,6 +72,7 @@ function downloadVCard() {
     "VERSION:3.0",
     "FN:Fuwad Oladega",
     `EMAIL;TYPE=INTERNET:${EMAIL}`,
+    `TEL;TYPE=CELL:${PHONE_TEL}`,
     "TITLE:Cloud & Software Developer",
     `URL:${LINKEDIN}`,
     `URL:${GITHUB}`,
@@ -86,7 +91,15 @@ function downloadVCard() {
 }
 
 export default function Contact() {
-  const [form, setForm] = useState<FormState>(initialState);
+  const [searchParams] = useSearchParams();
+  const packageParam = searchParams.get("package")?.trim() ?? "";
+  const selectedPackage = isKnownPricingSelection(packageParam)
+    ? packageParam
+    : "";
+  const [form, setForm] = useState<FormState>({
+    ...initialState,
+    subject: selectedPackage ? `${selectedPackage} inquiry` : "",
+  });
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [toast, setToast] = useState<ToastState>(null);
@@ -101,6 +114,7 @@ export default function Contact() {
         "@type": "Person",
         name: "Fuwad Oladega",
         email: EMAIL,
+        telephone: PHONE_TEL,
         sameAs: [LINKEDIN, GITHUB],
         jobTitle: "Cloud & Software Developer",
       },
@@ -144,7 +158,7 @@ export default function Contact() {
           email: form.email,
           subject: form.subject,
           message: form.message,
-          projectType: "General",
+          projectType: selectedPackage || "General",
           budget: "",
           consent: form.consent,
           company: form.company,
@@ -235,6 +249,22 @@ export default function Contact() {
                       style={{ color: "var(--textSecondary)" }}
                     >
                       {EMAIL}
+                    </p>
+                  </div>
+                </a>
+                <a
+                  href={`tel:${PHONE_TEL}`}
+                  className="flex items-center gap-3 rounded-2xl border border-(--border) bg-(--surface) px-4 py-3 transition hover:-translate-y-0.5 hover:shadow-glow"
+                  style={{ color: "var(--textPrimary)" }}
+                >
+                  <Phone className="h-5 w-5" aria-hidden />
+                  <div>
+                    <span className="text-sm font-semibold">Phone</span>
+                    <p
+                      className="text-xs"
+                      style={{ color: "var(--textSecondary)" }}
+                    >
+                      {PHONE_DISPLAY}
                     </p>
                   </div>
                 </a>
